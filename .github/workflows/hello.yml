@@ -1,0 +1,19 @@
+name: hello-actions
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  hello:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: |
+          echo "Hello from WSL self-hosted runner"
+          pwd
+          whoami
